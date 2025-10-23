@@ -8,7 +8,7 @@ from curl import *
 
 class TestLogInToAccount:
     def test_log_in_using_the_log_in_to_account_button(self, driver):
-        driver.get(main_site)
+        driver.get(base_url)
         WebDriverWait(driver, 10).until(
             EC.visibility_of_element_located(
                 MainPageLocators.LOGIN_IN_TO_ACCOUNT_BUTTON
@@ -24,12 +24,12 @@ class TestLogInToAccount:
         driver.find_element(*LoginPageLocators.EMAIL).send_keys(email)
         driver.find_element(*LoginPageLocators.PASSWORD).send_keys(password)
         driver.find_element(*LoginPageLocators.LOGIN_BUTTON).click()
-        WebDriverWait(driver, 10).until(EC.url_to_be(main_site))
+        WebDriverWait(driver, 10).until(EC.url_to_be(base_url))
 
-        assert driver.current_url == main_site
+        assert driver.current_url == base_url
 
     def test_log_in_to_the_account_through_the_personal_cabinet_button(self, driver):
-        driver.get(main_site)
+        driver.get(base_url)
         WebDriverWait(driver, 10).until(
             EC.visibility_of_element_located(MainPageLocators.PERSONAL_ACCAUNT_BUTTON)
         )
@@ -43,9 +43,9 @@ class TestLogInToAccount:
         driver.find_element(*LoginPageLocators.EMAIL).send_keys(email)
         driver.find_element(*LoginPageLocators.PASSWORD).send_keys(password)
         driver.find_element(*LoginPageLocators.LOGIN_BUTTON).click()
-        WebDriverWait(driver, 10).until(EC.url_to_be(main_site))
+        WebDriverWait(driver, 10).until(EC.url_to_be(base_url))
 
-        assert driver.current_url == main_site
+        assert driver.current_url == base_url
 
     def test_log_in_to_account_via_the_button_in_the_registration_form(self, driver):
         driver.get(registr_page)
@@ -62,9 +62,9 @@ class TestLogInToAccount:
         driver.find_element(*LoginPageLocators.EMAIL).send_keys(email)
         driver.find_element(*LoginPageLocators.PASSWORD).send_keys(password)
         driver.find_element(*LoginPageLocators.LOGIN_BUTTON).click()
-        WebDriverWait(driver, 10).until(EC.url_to_be(main_site))
+        WebDriverWait(driver, 10).until(EC.url_to_be(base_url))
 
-        assert driver.current_url == main_site
+        assert driver.current_url == base_url
 
     def test_log_in_to_account_the_button_in_the_password_recovery_form(self, driver):
         driver.get(forgot_password)
@@ -81,6 +81,6 @@ class TestLogInToAccount:
         driver.find_element(*LoginPageLocators.EMAIL).send_keys(email)
         driver.find_element(*LoginPageLocators.PASSWORD).send_keys(password)
         driver.find_element(*LoginPageLocators.LOGIN_BUTTON).click()
-        WebDriverWait(driver, 10).until(EC.url_to_be(main_site))
+        WebDriverWait(driver, 10).until(EC.url_to_be(base_url))
 
-        assert driver.current_url == main_site
+        assert driver.current_url == base_url

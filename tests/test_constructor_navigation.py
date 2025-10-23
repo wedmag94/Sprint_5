@@ -19,7 +19,7 @@ class TestConstructorNavigation:
         driver.find_element(*LoginPageLocators.EMAIL).send_keys(email)
         driver.find_element(*LoginPageLocators.PASSWORD).send_keys(password)
         driver.find_element(*LoginPageLocators.LOGIN_BUTTON).click()
-        WebDriverWait(driver, 10).until(EC.url_to_be(main_site))
+        WebDriverWait(driver, 10).until(EC.url_to_be(base_url))
         WebDriverWait(driver, 10).until(
             EC.visibility_of_element_located(ConstructorLocators.CONSTRUCTOR)
         )
@@ -48,7 +48,7 @@ class TestConstructorNavigation:
         driver.find_element(*LoginPageLocators.EMAIL).send_keys(email)
         driver.find_element(*LoginPageLocators.PASSWORD).send_keys(password)
         driver.find_element(*LoginPageLocators.LOGIN_BUTTON).click()
-        WebDriverWait(driver, 10).until(EC.url_to_be(main_site))
+        WebDriverWait(driver, 10).until(EC.url_to_be(base_url))
         WebDriverWait(driver, 10).until(
             EC.visibility_of_element_located(ConstructorLocators.CONSTRUCTOR)
         )
@@ -72,7 +72,7 @@ class TestConstructorNavigation:
         driver.find_element(*LoginPageLocators.EMAIL).send_keys(email)
         driver.find_element(*LoginPageLocators.PASSWORD).send_keys(password)
         driver.find_element(*LoginPageLocators.LOGIN_BUTTON).click()
-        WebDriverWait(driver, 10).until(EC.url_to_be(main_site))
+        WebDriverWait(driver, 10).until(EC.url_to_be(base_url))
         WebDriverWait(driver, 10).until(
             EC.visibility_of_element_located(ConstructorLocators.CONSTRUCTOR)
         )

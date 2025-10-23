@@ -17,10 +17,10 @@ class TestTransferToConstructor:
         driver.find_element(*LoginPageLocators.EMAIL).send_keys(email)
         driver.find_element(*LoginPageLocators.PASSWORD).send_keys(password)
         driver.find_element(*LoginPageLocators.LOGIN_BUTTON).click()
-        WebDriverWait(driver, 10).until(EC.url_to_be(main_site))
+        WebDriverWait(driver, 10).until(EC.url_to_be(base_url))
         driver.find_element(*MainPageLocators.PERSONAL_ACCAUNT_BUTTON).click()
         WebDriverWait(driver, 10).until(EC.url_to_be(profile))
         driver.find_element(*MainPageLocators.CONSTRUCTOR_BUTTON).click()
-        WebDriverWait(driver, 10).until(EC.url_to_be(main_site))
+        WebDriverWait(driver, 10).until(EC.url_to_be(base_url))
 
-        assert driver.current_url == main_site
+        assert driver.current_url == base_url

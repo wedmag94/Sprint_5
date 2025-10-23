@@ -16,3 +16,9 @@ def driver():
     driver = webdriver.Chrome(options=options)
     yield driver
     driver.quit()
+
+
+@pytest.fixture
+# Фикстура для открытия страницы
+def opening_sait():
+    driver.get(login_page)

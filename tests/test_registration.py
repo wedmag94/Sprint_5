@@ -38,6 +38,7 @@ class TestRegisrationInvalidPassword:
         driver.find_element(*RegisterPageLocators.NAME).send_keys(name)
         driver.find_element(*RegisterPageLocators.EMAIL).send_keys(email)
         driver.find_element(*RegisterPageLocators.PASSWORD).send_keys(password)
+        driver.find_element(*RegisterPageLocators.REG_BUTTON).click()
 
         error_message = WebDriverWait(driver, 10).until(
             EC.visibility_of_element_located(RegisterPageLocators.PASSWORD_ERROR)
